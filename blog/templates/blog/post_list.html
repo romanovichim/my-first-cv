@@ -1,0 +1,148 @@
+{% load staticfiles %}
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>jQuery.FbMessenger demo</title>
+
+		<style>
+			body, html {
+				margin: 0;
+				padding: 0;
+				background: #fff;
+			}
+			div.vcenter {
+				margin: 5vh auto 0;
+				height: 95vh;
+				width: 100%;
+				text-align: center;
+			}
+			div.iphone-wrapper {
+				display: inline-block;
+				width: auto;
+				height: 100%;
+				position: relative;
+			}
+			div.iphone-wrapper > img {
+				height: 100%;
+				width: auto;
+				display: block;
+			}
+			div.screen-content {
+				position: absolute;
+				top: 10.8985%;
+				bottom: 20%;
+				left: 14.65%;
+				right: 16.8%;
+				background: #000;
+				border-radius: 3px;
+				overflow: hidden;
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script src="{% static 'js/jquery.fbmessenger.min.js' %}"></script>
+		<link rel="stylesheet" href="{% static 'css/jquery.fbmessenger.css' %}">
+	</head>
+	<body>
+		<div class="vcenter">
+			<div class="iphone-wrapper">
+				<img alt="iPhone 6 white" src="https://i.imgsafe.org/a2ba6b06b3.png" />
+				<div class="screen-content">
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				var now = new Date();
+				$('.screen-content').fbMessenger({
+						botName: 'CV of Romanovich I.M',
+						botBannerUrl: "{% static 'images/sberlogo.PNG' %}",
+						botLogoUrl: "{% static 'images/Rbotlogo.PNG' %}",
+						botWelcomeMessage: 'Hello, my name is CVbot,and i will tell u about Romanovich Ivan!',
+						likes: {
+							totalCount: 25123,
+							friendName: 'Sberbank',
+							otherFriendsCount: 42
+						},
+						loop: false
+					})
+					.fbMessenger('start', { delay: 5000 } )
+					.fbMessenger('message', 'user', 'Hello', { timestamp: now, delay: 500 })
+					.fbMessenger('message', 'bot', "Hello and let's start ", { timestamp: now, delay: 0 })
+					.fbMessenger('message', 'bot', 'I will briefly tell you about Romanovich Ivan!', { timestamp: now, delay: 1500 })
+					.fbMessenger('message', 'bot', 'What would you like to know about him?', { timestamp: now, delay: 500 })
+			
+					.fbMessenger('message', 'user', "Tell me about his education", { timestamp: now, delay: 2500 })
+					.fbMessenger('message', 'bot', 'Okey. Select from the options below or enter an exactly about what period u want to learn.', { timestamp: now, delay: 4000 })
+					.fbMessenger('showQuickReplies', [
+						'School &#8470 1730',
+						'English specialized school &#8470 1293',
+						'Bachelor degree:Bauman MSTU',
+						'Student: Bauman MSTU',
+					], { timestamp: now, delay: 0 })
+					.fbMessenger('scrollQuickReplies', 3, { delay: 4000 })
+					.fbMessenger('scrollQuickReplies', 0, { delay: 1000 })
+					.fbMessenger('scrollQuickReplies', 2, { delay: 1000 })
+					.fbMessenger('selectQuickReply', 2, { delay: 1000 })
+					.fbMessenger('typingIndicator', { delay: 1000 })
+					.fbMessenger('message', 'bot', ' Ivan sucessfully finished bachelor program of Bauman Moscow State Technical University, Faculty: Information and Control System, Specilization: Automated processing and information management', { timestamp: now, delay: 3500 })
+					.fbMessenger('typingIndicator', { delay: 500 })
+					.fbMessenger('message', 'user', "Great, so what next?", { timestamp: now, delay: 5000 })
+					.fbMessenger('message', 'bot', "In 2018 Ivan will finish Master's program of Bauman MSTU, Faculty: Engineering Business and Management,Program: Accounting, analysis and audit of high-tech enterprises ", { timestamp: now, delay: 3500 })
+					.fbMessenger('message', 'user', "Cool", { timestamp: now, delay: 2500 })
+					.fbMessenger('message', 'user', "What about experience?", { timestamp: now, delay: 500 })
+					
+					.fbMessenger('message', 'bot', 'What experience u are interested in?', { timestamp: now, delay: 1000 })
+					.fbMessenger('showGenericTemplate', [
+						{
+							imageUrl: "{% static 'images/prom.jpg' %}",
+							title: 'Promsvyazbank',
+							subtitle: 'intern sep2014-dec2014.',
+							buttons: [
+								'Select Promsvyazbank'
+							]
+						},
+						{
+							imageUrl: "{% static 'images/ippi.jpg' %}",
+							title: 'Institute for Information',
+							subtitle: 'intern-researcher apr2015-dec2015.',
+							buttons: [
+								'Select Institute'
+							]
+						},
+						{
+							imageUrl: "{% static 'images/sber.jpg' %}",
+							title: 'PAO Sberbank',
+							subtitle: 'CFO dep: senior specialist july2016-june2017   lead specialist july2017 - now',
+							buttons: [
+								'Select Sberbank'
+							]
+						}
+					], { timestamp: now, delay: 2000 })
+					.fbMessenger('scrollGenericTemplate', 1, { delay: 4000 })
+					.fbMessenger('scrollGenericTemplate', 2, { delay: 4000 })
+					.fbMessenger('scrollGenericTemplate', 1, { delay: 2000 })
+					.fbMessenger('selectGenericTemplate', 2, { delay: 2000 })
+					.fbMessenger('typingIndicator', { delay: 500 })
+					.fbMessenger('message', 'user', "Select Sberbank", { timestamp: now, delay: 3000 })
+					.fbMessenger('message', 'bot', "Ivan works in a CFO department of Central Russian Bank.His main functional responsibilites is automatization of analytic processes,and analyzis of analytic instruments.Also Ivan,made three Telegram bot's for solving bank problems.More information u can see in his full CV.", { timestamp: now, delay: 3000 })
+					.fbMessenger('typingIndicator', { delay: 500 })
+					
+					.fbMessenger('message', 'user', "What else should i know about Ivan?", { timestamp: now, delay: 3000 })
+					.fbMessenger('message', 'bot', "Let me think", { timestamp: now, delay: 500 })
+					.fbMessenger('typingIndicator', { delay: 500 })
+					.fbMessenger('message', 'bot', "Let's talk about his knowledges", { timestamp: now, delay: 4000 })
+					.fbMessenger('message', 'bot', "I devided them into two parts:analitic and development", { timestamp: now, delay: 3500 })
+					.fbMessenger('message', 'bot', "Analytics: SQL,VBA,PowerPoint,BI-platfrom Qlikview,ETL processes,OLAP, Python - numpy,pandas,scipy,matplotlib", { timestamp: now, delay: 3500 })
+					.fbMessenger('message', 'bot', "Development: Python(Django),JS(Jquery),HTML/CSS,API and OAuth understanding", { timestamp: now, delay: 2500 })
+					
+					.fbMessenger('message', 'user', "Very good", { timestamp: now, delay: 2000 })
+					.fbMessenger('message', 'user', "Check Ivan's main CV! And have a nice day!!!", { timestamp: now, delay: 3000 })
+					
+					.fbMessenger('run');
+			});
+		</script>
+	</body>
+</html>
