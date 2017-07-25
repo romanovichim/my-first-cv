@@ -98,14 +98,14 @@
 					.fbMessenger('scrollQuickReplies', 2, { delay: 1000 })
 					.fbMessenger('selectQuickReply', 2, { delay: 1000 })
 					.fbMessenger('typingIndicator', { delay: 1000 })
-					.fbMessenger('message', 'bot', ' Ivan sucessfully finished bachelor program of Bauman Moscow State Technical University, Faculty: Information and Control System, Specilization: Automated processing and information management', { timestamp: now, delay: 3500 })
+					.fbMessenger('message', 'bot', ' Ivan finished bachelor program of Bauman Moscow State Technical University, Faculty: Information and Control System, Specilization: Automated processing and information management', { timestamp: now, delay: 3500 })
 					.fbMessenger('typingIndicator', { delay: 500 })
-					.fbMessenger('message', 'user', "Great, so what next?", { timestamp: now, delay: 5000 })
+					.fbMessenger('message', 'user', "Great, so what is next?", { timestamp: now, delay: 5000 })
 					.fbMessenger('message', 'bot', "In 2018 Ivan will finish Master's program of Bauman MSTU, Faculty: Engineering Business and Management,Program: Accounting, analysis and audit of high-tech enterprises ", { timestamp: now, delay: 3500 })
 					.fbMessenger('message', 'user', "Cool", { timestamp: now, delay: 2500 })
-					.fbMessenger('message', 'user', "What about experience?", { timestamp: now, delay: 500 })
+					.fbMessenger('message', 'user', "What about his experience?", { timestamp: now, delay: 500 })
 					
-					.fbMessenger('message', 'bot', 'What experience u are interested in?', { timestamp: now, delay: 1000 })
+					.fbMessenger('message', 'bot', 'What experience are u interested in?', { timestamp: now, delay: 1000 })
 					.fbMessenger('showGenericTemplate', [
 						{
 							imageUrl: "{% static 'images/prom.jpg' %}",
@@ -138,19 +138,19 @@
 					.fbMessenger('selectGenericTemplate', 2, { delay: 2000 })
 					.fbMessenger('typingIndicator', { delay: 500 })
 					.fbMessenger('message', 'user', "Select Sberbank", { timestamp: now, delay: 3000 })
-					.fbMessenger('message', 'bot', "Ivan works in a CFO department of Central Russian Bank.His main functional responsibilites is automatization of analytic processes,and analyzis of analytic instruments.Also Ivan,made three Telegram bot's for solving bank problems.More information u can see in his full CV.", { timestamp: now, delay: 3000 })
+					.fbMessenger('message', 'bot', "Ivan works in a CFO department of Central Russian Bank.His main functional responsibilites are automatization of analytic processes,and analyzis of analytic instruments.Also Ivan,made three Telegram bot's for solving bank problems.More information u can see in his full CV below.", { timestamp: now, delay: 3000 })
 					.fbMessenger('typingIndicator', { delay: 500 })
 					
 					.fbMessenger('message', 'user', "What else should i know about Ivan?", { timestamp: now, delay: 3000 })
 					.fbMessenger('message', 'bot', "Let me think", { timestamp: now, delay: 500 })
 					.fbMessenger('typingIndicator', { delay: 500 })
-					.fbMessenger('message', 'bot', "Let's talk about his knowledges", { timestamp: now, delay: 4000 })
-					.fbMessenger('message', 'bot', "I devided them into two parts:analitic and development", { timestamp: now, delay: 3500 })
-					.fbMessenger('message', 'bot', "Analytics: SQL,VBA,PowerPoint,BI-platfrom Qlikview,ETL processes,OLAP, Python - numpy,pandas,scipy,matplotlib", { timestamp: now, delay: 3500 })
-					.fbMessenger('message', 'bot', "Development: Python(Django),JS(Jquery),HTML/CSS,API and OAuth understanding", { timestamp: now, delay: 2500 })
+					.fbMessenger('message', 'bot', "Let's talk about his attainments", { timestamp: now, delay: 4000 })
+					.fbMessenger('message', 'bot', "I devided them into two parts:analitical skills and developer skills", { timestamp: now, delay: 3500 })
+					.fbMessenger('message', 'bot', "Analytical: SQL,VBA,PowerPoint,BI-platfrom Qlikview,ETL processes,OLAP, Python - numpy,pandas,scipy,matplotlib", { timestamp: now, delay: 3500 })
+					.fbMessenger('message', 'bot', "Developer: Python(Django),JS(Jquery),HTML/CSS,API and OAuth understanding", { timestamp: now, delay: 2500 })
 					
 					.fbMessenger('message', 'user', "Very good", { timestamp: now, delay: 2000 })
-					.fbMessenger('message', 'user', "Check Ivan's main CV! And have a nice day!!!", { timestamp: now, delay: 3000 })
+					.fbMessenger('message', 'user', "Check Ivan's main CV below! And have a nice day!!!", { timestamp: now, delay: 3000 })
 					
 					.fbMessenger('run');
 			});
