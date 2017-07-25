@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Romanovich I.M CV</title>
+		<title>jQuery.FbMessenger demo</title>
 
 		<style>
 			body, html {
@@ -14,7 +14,7 @@
 			}
 			div.vcenter {
 				margin: 5vh auto 0;
-				height: 85vh;
+				height: 95vh;
 				width: 100%;
 				text-align: center;
 			}
@@ -39,16 +39,6 @@
 				border-radius: 3px;
 				overflow: hidden;
 			}
-			div.botpreview-link {
-			text-align: center;
-			margin-bottom: 1em;
-			font-family: 'Avenir',Helvetica,sans-serif;
-			}
-			div.telegramlink{
-			text-align:center;
-			margin-bottom:1em;
-			font-family:'Avenir',Helvetica,sans-serif
-			}
 		</style>
 
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -67,7 +57,7 @@
 			$(function() {
 				var now = new Date();
 				$('.screen-content').fbMessenger({
-						botName: 'Romanovich I.M CV',
+						botName: 'CV of Romanovich I.M',
 						botBannerUrl: "{% static 'images/sberlogo.PNG' %}",
 						botLogoUrl: "{% static 'images/Rbotlogo.jpg' %}",
 						botWelcomeMessage: 'Hello, my name is CVbot,and i will tell u about Romanovich Ivan!',
@@ -78,7 +68,7 @@
 						},
 						loop: false
 					})
-					.fbMessenger('start', { delay: 4500 } )
+					.fbMessenger('start', { delay: 5000 } )
 					.fbMessenger('message', 'user', 'Hello', { timestamp: now, delay: 500 })
 					.fbMessenger('message', 'bot', "Hello and let's start ", { timestamp: now, delay: 0 })
 					.fbMessenger('message', 'bot', 'I will briefly tell you about Romanovich Ivan!', { timestamp: now, delay: 1500 })
@@ -104,7 +94,7 @@
 					.fbMessenger('message', 'user', "Cool", { timestamp: now, delay: 2500 })
 					.fbMessenger('message', 'user', "What about experience?", { timestamp: now, delay: 500 })
 					
-					.fbMessenger('message', 'bot', 'What experience are u interested in?', { timestamp: now, delay: 1000 })
+					.fbMessenger('message', 'bot', 'What experience u are interested in?', { timestamp: now, delay: 1000 })
 					.fbMessenger('showGenericTemplate', [
 						{
 							imageUrl: "{% static 'images/prom.jpg' %}",
